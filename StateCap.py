@@ -83,16 +83,7 @@ def all_capitals():
 
 def states_capitals_string():
     list = []
-    sorted(STATES_CAPITALS)
-    for keys, values in STATES_CAPITALS.items():
-        list.append(keys)
-        list.append('->')
-        list.append(values)
-        list.append(',')
-        newlist = ' '.join(list)
-    print(newlist)
-    pass
-
+    s
 
 
 def get_state(capital):
@@ -107,17 +98,23 @@ def test_state_to_capital():
     assert 'Cheyenne' == STATES_CAPITALS['Wyoming']
 
 
+def test_state_to_capital_unknown():
+    with pytest.raises(KeyError):
+        STATES_CAPITALS['']
+
+
 def test_capital_to_state():
     assert 'Wyoming' == get_state('Cheyenne')
 
 
-print("1.")
-capital_of_Idaho()
-print("2.")
-all_states()
-print("3.")
-all_capitals()
-print("4.")
-states_capitals_string()
-print("5.")
-get_state('Salem')
+def test_capital_to_state_unknown():
+    with pytest.raises(KeyError):
+        get_state('')
+
+
+def main():
+    return pytest.main(StateCap.py)
+
+
+if __name__ == '__main__':
+    sys.exit(main())

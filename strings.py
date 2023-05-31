@@ -9,6 +9,7 @@ Create a function that returns a list of 4 character strings:
 Example: ['mont', 'y py', 'thon', 's fl', 'ying', ' cir', 'cus']
 ### git comment
 """
+import pytest
 
 def no_duplicates(a_string):
     sort = ""
@@ -19,14 +20,14 @@ def no_duplicates(a_string):
             sort = sort+word
     new = sorted(sort)
     test=''.join(new)
-    print(test)
+    return test
     pass
 
 
 def reversed_words(a_string):
     newstring = a_string.split()
     reversed = newstring[::-1]
-    print(reversed)
+    return reversed
     pass
 
 
@@ -42,7 +43,7 @@ def four_char_strings(a_string):
             newlist.append(templist)
             templist = ''
     newlist.append(templist)
-    print(newlist)
+    return newlist
     pass
 
 
@@ -63,3 +64,27 @@ def test_four_char_strings():
 no_duplicates('monty pythons flying circus')
 reversed_words('monty pythons flying circus')
 four_char_strings('monty pythons flying circus')
+
+
+def test_no_duplicates():
+    s = 'monty pythons flying circus'
+    assert no_duplicates(s) == ' cfghilmnoprstuy'
+
+
+def test_reversed_words():
+    s = 'monty pythons flying circus'
+    assert reversed_words(s) == ['circus', 'flying', 'pythons', 'monty']
+
+
+def test_four_char_strings():
+    s = 'monty pythons flying circus'
+    assert four_char_strings(s) == ['mont', 'y py', 'thon', 's fl', 'ying', ' cir', 'cus']
+
+
+def main():
+    return pytest.main(["strings.py"])
+
+
+if __name__ == '__main__':
+    main()
+
