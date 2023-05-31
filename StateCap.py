@@ -113,7 +113,7 @@ def test_capital_to_state_unknown():
 
 
 def main():
-    return pytest.main(StateCap.py)
+    return pytest.main(["StateCap.py"])
 
 
 if __name__ == '__main__':
