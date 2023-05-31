@@ -13,8 +13,6 @@ handle that?
 """
 import sys
 
-import pytest
-
 STATES_CAPITALS = {
     'Alabama' : 'Montgomery',
     'Alaska' : 'Juneau',
@@ -70,24 +68,28 @@ STATES_CAPITALS = {
 
 
 def capital_of_Idaho():
-    # Your code here
+    print(STATES_CAPITALS['Idaho'])
     pass
 
 def all_states():
-    # Your code here
+    for keys, values in STATES_CAPITALS.items():
+        print(keys)
     pass
 
 def all_capitals():
-    # Your code here
+    for keys, values in STATES_CAPITALS.items():
+        print(values)
     pass
 
 def states_capitals_string():
-    # Your code here
-    pass
-
+    list = []
+    s
 
 
 def get_state(capital):
+    for keys, values in STATES_CAPITALS.items():
+        if values == capital:
+            print(keys)
     pass
 
 
@@ -111,7 +113,7 @@ def test_capital_to_state_unknown():
 
 
 def main():
-    return pytest.main(__file__)
+    return pytest.main(["StateCap.py"])
 
 
 if __name__ == '__main__':
